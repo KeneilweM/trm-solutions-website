@@ -508,15 +508,15 @@
         <div class="info-row"><div class="info-label">Address</div><div class="info-value">South Africa</div></div>
         <div class="info-row"><div class="info-label">Company Reg.</div><div class="info-value">2024/649104/07</div></div>
       </div>
-      <div class="contact-form">
-        <h3>Send a message</h3>
-        <form id="contactForm">
-          <div class="field"><label>NAME</label><input type="text" required></div>
-          <div class="field"><label>EMAIL</label><input type="email" required></div>
-          <div class="field"><label>WHAT DO YOU NEED HELP WITH?</label><textarea required></textarea></div>
-          <button type="submit" class="submit-btn">Send message</button>
-          <div class="form-note" id="formNote">Thanks — this is a prototype, so nothing was actually sent, but that's what confirmation looks like.</div>
-        </form>
+ <div class="contact-form">
+  <h3>Send a message</h3>
+  <form action="https://formspree.io/f/xgaejlnk" method="POST" id="contactForm">
+    <div class="field"><label>NAME</label><input type="text" name="name" required></div>
+    <div class="field"><label>EMAIL</label><input type="email" name="email" required></div>
+    <div class="field"><label>WHAT DO YOU NEED HELP WITH?</label><textarea name="message" required></textarea></div>
+    <button type="submit" class="submit-btn">Send message</button>
+  </form>
+</div>
       </div>
     </div>
   </div>
@@ -806,11 +806,7 @@
       goto(el.getAttribute("data-goto"));
     });
   });
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    document.getElementById("formNote").classList.add("show");
-  });
-
+ 
   // ===== QUIZ LOGIC =====
   function showQuizStep(id) {
     document.querySelectorAll(".quiz-step").forEach(function(s) { s.classList.remove("active"); });
